@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 04:35:41 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/03 04:36:28 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/03 04:38:37 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ void	error_argument(int err)
 	{
 		ft_putstr_fd("\033[0;31mError: Invalid fractal name\n", 1);
 		ft_putstr_fd("\033[0;35mAvailable fractals\n", 1);
-		ft_putstr_fd("./fractol mandelbrot\n./fractol julia [number] [number]\n",
-						1);
+		ft_putstr_fd("./fractol mandelbrot\n./fractol julia [number] [number]\n", 1);
 	}
 	exit(EXIT_FAILURE);
 }
