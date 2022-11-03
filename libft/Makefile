@@ -13,7 +13,7 @@ SOURCES = ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 	ft_putendl_fd.c ft_putnbr_fd.c ft_strmapi.c \
 	ft_striteri.c ft_itoa.c ft_isnumber.c \
 	ft_atof.c
-
+	
 OBJECTS = ${SOURCES:.c=.o}
 
 RM = @rm -f

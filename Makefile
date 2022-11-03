@@ -24,9 +24,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	rm -rf $(OBJ_DIR)
+	make clean -C ./libft
 
 fclean: clean
 	rm -f $(NAME)
+	make fclean -C ./libft
 
 re: fclean all
 

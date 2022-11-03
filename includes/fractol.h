@@ -49,7 +49,7 @@ typedef struct s_fractol
 
 void draw_fractol(t_mlx *m, t_fractol *f);
 int mandelbrot(double *complex, int max_i);
-int julia(double *complex);
+int julia(double *complex, int max_i);
 void	my_mlx_pixel_put(t_mlx *m, int x, int y, int color);
 
 

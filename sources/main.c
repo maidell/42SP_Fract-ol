@@ -1,5 +1,5 @@
 #include "fractol.h"
-#include "../libft/libft.h"
+
 
 // ponteiro é uma variável que guarda o endereço de memória de outra variável
 // . quando eu quero acessar o valor de uma variavel da struct
@@ -64,14 +64,15 @@ void    handle_args(int argc, char **argv, t_fractol *var)
 
 int	main(int argc, char **argv)
 {
-	t_mlx teste;
-	t_fractol mudar;
+	t_mlx mlx;
+	t_fractol var;
 
-	init_var(&mudar);
-	init_mlx(&teste);
-	mudar.fractal = mandelbrot;
-	 draw_fractol(&teste, &mudar);
-	//my_mlx_pixel_put(&teste, 400, 400, 0xFFF000);
-	mlx_put_image_to_window(teste.mlx, teste.win, teste.img, 0, 0);
-	mlx_loop(teste.mlx);
+    handle_args(argc, argv, &var);
+	init_var(&var);
+	init_mlx(&mlx);
+	var.fractal = mandelbrot;
+	 draw_fractol(&mlx, &var);
+	//my_mlx_pixel_put(&mlx, 400, 400, 0xFFF000);
+	mlx_put_image_to_window(mlx.mlx, mlx.win, mlx.img, 0, 0);
+	mlx_loop(mlx.mlx);
 }

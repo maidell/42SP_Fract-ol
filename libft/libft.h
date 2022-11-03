@@ -20,7 +20,6 @@ int		ft_isdigit(int arg);
 int		ft_isalpha(int arg);
 int		ft_isprint(int arg);
 int		ft_isascii(int arg);
-int     ft_isnumber(const char *s);
 
 int		ft_tolower(int arg);
 int		ft_toupper(int arg);
@@ -54,8 +53,11 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int nb);
 int		ft_atoi(const char *str);
-double  ft_atof(const char *str);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+int    ft_isnumber(const char *s);
+double    ft_atof(const char *str);
+
 
 
 
