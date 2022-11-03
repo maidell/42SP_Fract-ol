@@ -14,31 +14,12 @@ void	init_mlx(t_mlx *m)
 			&m->endian);
 }
 
-void	my_mlx_pixel_put(t_mlx *m, int x, int y, int color)
-{
-	char	*dst;
-
-	dst = m->addr + (y * m->line_length + x * (m->bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
-}
-
 void	init_var(t_fractol *f)
 {
 	f->min[REAL] = -1.5;
 	f->max[REAL] = 1.5;
 	f->min[IMAGINARY] = -1.5;
 	f->max[IMAGINARY] = 1.5;
-}
-
-void	draw_fractol(t_mlx *m, t_fractol *f)
-{
-    t_fractol teste2;
-	f->x = 0;
-    teste2.x =0;
-    while (f->x < WIDTH)
-    {
-        f->y = 0;
-    }
 }
 
 int	main(void)
@@ -48,5 +29,8 @@ int	main(void)
 
 	init_var(&mudar);
 	init_mlx(&teste);
+	draw_fractol(&teste, &mudar);
+	//my_mlx_pixel_put(&teste, 400, 400, 0xFFF000);
+	mlx_put_image_to_window(teste.mlx, teste.win, teste.img, 0, 0);
 	mlx_loop(teste.mlx);
 }

@@ -3,7 +3,7 @@ HEADER =    -I ./includes
 SRC_DIR =    ./sources
 OBJ_DIR =    ./objects
 
-SRC_FILES =    main.c
+SRC_FILES =    main.c draw_fractal.c fractais.c handle_error.c 
 
 SRC =        $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 

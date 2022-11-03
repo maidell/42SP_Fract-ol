@@ -6,12 +6,13 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 23:40:48 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/10/27 00:52:29 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/02 23:33:53 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
+# include <math.h>
 # include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -38,8 +39,15 @@ typedef struct s_fractol
 	double	max[2];
 	int		x;
 	int		y;
-	double	complex[2];
+	double	complex[4];
 	double	center[2];
+	double	constant[2];
+	int		(*fractal)(double *complex, int max_i);
+
 }			t_fractol;
+
+void		draw_fractol(t_mlx *m, t_fractol *f);
+int			mandelbrot(double *complex);
+int			julia(double *complex);
 
 #endif
