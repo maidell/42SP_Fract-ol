@@ -5,25 +5,27 @@
 // . quando eu quero acessar o valor de uma variavel da struct
 // quando eu quero acessa o valor de uma variavel da struct por meio de um ponteiro
 //
+// void    init_mlx(t_data *data)
+// {
+//     data->mlx = mlx_init();
+//     data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, TITLE);
+//     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+//     data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel,
+//             &data->line_length, &data->endian);
+// }
 
-void	init_mlx(t_mlx *m)
+void    init_data(t_data *data)
 {
-	m->mlx = mlx_init();
-	m->win = mlx_new_window(m->mlx, WIDTH, HEIGHT, TITLE);
-	m->img = mlx_new_image(m->mlx, WIDTH, HEIGHT);
-	m->addr = mlx_get_data_addr(m->img, &m->bits_per_pixel, &m->line_length,
-			&m->endian);
+    data->min[REAL] = -1.5;
+    data->max[REAL] = 1.5;
+    data->min[IMAGINARY] = -1.5;
+    data->max[IMAGINARY] = 1.5;
+       data->mlx = mlx_init();
+    data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, TITLE);
+    data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+    data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel,
+            &data->line_length, &data->endian);
 }
-
-void	init_var(t_fractol *f)
-{
-	f->min[REAL] = -1.5;
-	f->max[REAL] = 1.5;
-	f->min[IMAGINARY] = -1.5;
-	f->max[IMAGINARY] = 1.5;
-}
-
-
 
 void    error_argument(int err)
 {
@@ -38,22 +40,23 @@ void    error_argument(int err)
     {
         ft_putstr_fd("\033[0;31mError: Invalid fractal name\n", 1);
         ft_putstr_fd("\033[0;35mAvailable fractals\n", 1);
-        ft_putstr_fd("./fractol mandelbrot\n./fractol julia [number] [number]\n", 1);
+        ft_putstr_fd("./fractol mandelbrot\n./fractol julia [number] [number]\n",
+                1);
     }
     exit(EXIT_FAILURE);
 }
 
-void    handle_args(int argc, char **argv, t_fractol *var)
+void    handle_args(int argc, char **argv, t_data *data)
 {
     if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10))
-        var->fractal = mandelbrot;
+        data->fractal = mandelbrot;
     else if (argc >= 2 && !ft_strncmp(argv[1], "julia", 10))
     {
-        var->fractal = julia;
+        data->fractal = julia;
         if (argc == 4 && ft_isnumber(argv[2]) && ft_isnumber(argv[3]))
         {
-            var->complex[2] = ft_atof(argv[2]);
-            var->complex[3] = ft_atof(argv[3]);
+            data->complex[2] = ft_atof(argv[2]);
+            data->complex[3] = ft_atof(argv[3]);
         }
         else
             error_argument(1);
@@ -62,16 +65,17 @@ void    handle_args(int argc, char **argv, t_fractol *var)
         error_argument(2);
 }
 
-int	main(int argc, char **argv)
+int    main(int argc, char **argv)
 {
-	t_mlx mlx;
-	t_fractol var;
+    t_data    data;
 
-    handle_args(argc, argv, &var);
-	init_var(&var);
-	init_mlx(&mlx);
-	 draw_fractol(&mlx, &var);
-	//my_mlx_pixel_put(&mlx, 400, 400, 0xFFF000);
-	mlx_put_image_to_window(mlx.mlx, mlx.win, mlx.img, 0, 0);
-	mlx_loop(mlx.mlx);
+    handle_args(argc, argv, &data);
+    init_data(&data);
+   // init_mlx(&data);
+    draw_fractol(&data);
+    mlx_mouse_hook(data.win, handle_zoom, &data);
+    //mlx_hook(data.win, 4, 0, handle_zoom,& data);
+
+    mlx_hook(data.win, 17, 0, close_win, &data);
+    mlx_loop(data.mlx);
 }
