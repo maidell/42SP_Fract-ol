@@ -29,16 +29,16 @@ void    error_argument(int err)
 {
     if (err == 1)
     {
-        printf("\033[0;31mError: Missing argument or invite number\n");
-        printf("\033[0;35mif you are using Julia fractal, you must\n");
-        printf("add the complex number as a second argument\n");
-        printf("\033[0;37mExample: ./fractol Julia -0.4 0.6\n");
+        ft_putstr_fd("\033[0;31mError: Missing argument or invite number\n", 1);
+        ft_putstr_fd("\033[0;35mif you are using Julia fractal, you must\n", 1);
+        ft_putstr_fd("add the complex number as a second argument\n", 1);
+        ft_putstr_fd("\033[0;37mExample: ./fractol Julia -0.4 0.6\n", 1);
     }
     else if (err == 2)
     {
-        printf("\033[0;31mError: Invalid fractal name\n");
-        printf("\033[0;35mAvailable fractals\n");
-        printf("./fractol mandelbrot\n./fractol julia [number] [number]\n");
+        ft_putstr_fd("\033[0;31mError: Invalid fractal name\n", 1);
+        ft_putstr_fd("\033[0;35mAvailable fractals\n", 1);
+        ft_putstr_fd("./fractol mandelbrot\n./fractol julia [number] [number]\n", 1);
     }
     exit(EXIT_FAILURE);
 }
@@ -70,7 +70,6 @@ int	main(int argc, char **argv)
     handle_args(argc, argv, &var);
 	init_var(&var);
 	init_mlx(&mlx);
-	var.fractal = mandelbrot;
 	 draw_fractol(&mlx, &var);
 	//my_mlx_pixel_put(&mlx, 400, 400, 0xFFF000);
 	mlx_put_image_to_window(mlx.mlx, mlx.win, mlx.img, 0, 0);
