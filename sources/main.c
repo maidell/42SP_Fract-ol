@@ -1,17 +1,16 @@
-#include "fractol.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/03 04:35:41 by mmaidel-          #+#    #+#             */
+/*   Updated: 2022/11/03 04:36:28 by mmaidel-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// ponteiro é uma variável que guarda o endereço de memória de outra variável
-// . quando eu quero acessar o valor de uma variavel da struct
-// quando eu quero acessa o valor de uma variavel da struct por meio de um ponteiro
-//
-// void    init_mlx(t_data *data)
-// {
-//     data->mlx = mlx_init();
-//     data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, TITLE);
-//     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
-//     data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel,
-//             &data->line_length, &data->endian);
-// }
+#include "fractol.h"
 
 void	init_data(t_data *data)
 {

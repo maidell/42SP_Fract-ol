@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 23:18:30 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/03 04:25:51 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/03 04:35:26 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	mandelbrot(double *complex, int max_i)
 
 int	julia(double *complex, int max_i)
 {
-	double number[4];
-	int index;
+	double	number[4];
+	int		index;
 
 	index = 0;
 	number[3] = 0;

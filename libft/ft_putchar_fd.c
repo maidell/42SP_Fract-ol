@@ -6,10 +6,11 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 05:16:13 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/03 04:23:11 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/03 04:28:38 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

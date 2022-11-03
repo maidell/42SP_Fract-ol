@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 23:22:08 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/03 04:24:30 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/03 04:35:17 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 void	draw_fractol(t_data *data)
 {
-	int axle[2];
-	int result;
+	int	axle[2];
+	int	result;
 
 	axle[0] = 0;
 	while (axle[0] < WIDTH)
