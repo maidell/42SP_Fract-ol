@@ -11,43 +11,46 @@
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
-# define FRACTOL_H
-# include <math.h>
-# include <mlx.h>
-# include <stdio.h>
-# include <stdlib.h>
-# define WIDTH 800
-# define HEIGHT 800
-# define TITLE "Fract'ol"
-# define REAL 0
-# define IMAGINARY 1
+#define FRACTOL_H
+#include <math.h>
+#include <mlx.h>
+#include <stdio.h>
+#include <stdlib.h>
+#define WIDTH 800
+#define HEIGHT 800
+#define TITLE "Fract'ol"
+#define REAL 0
+#define IMAGINARY 1
+#include "../libft/libft.h"
 
 typedef struct s_mlx
 {
-	void	*mlx;
-	void	*win;
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}			t_mlx;
+	void *mlx;
+	void *win;
+	void *img;
+	char *addr;
+	int bits_per_pixel;
+	int line_length;
+	int endian;
+} t_mlx;
 
 typedef struct s_fractol
 {
-	double	min[2];
-	double	max[2];
-	int		x;
-	int		y;
-	double	complex[4];
-	double	center[2];
-	double	constant[2];
-	int		(*fractal)(double *complex, int max_i);
+	double min[2];
+	double max[2];
+	int x;
+	int y;
+	double complex[4];
+	double center[2];
+	double constant[2];
+	int (*fractal)(double *complex, int max_i);
 
-}			t_fractol;
+} t_fractol;
 
-void		draw_fractol(t_mlx *m, t_fractol *f);
-int			mandelbrot(double *complex);
-int			julia(double *complex);
+void draw_fractol(t_mlx *m, t_fractol *f);
+int mandelbrot(double *complex, int max_i);
+int julia(double *complex);
+void	my_mlx_pixel_put(t_mlx *m, int x, int y, int color);
+
 
 #endif

@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-int	mandelbrot(double *complex)
+int	mandelbrot(double *complex, int max_i)
 {
 	double	number[4];
 	int		index;
@@ -21,7 +21,7 @@ int	mandelbrot(double *complex)
 	number[3] = 0;
 	number[0] = complex[0];
 	number[1] = complex[1];
-	while ((index < 100) && (number[3] < 4.0))
+	while ((index < max_i) && (number[3] < 4.0))
 	{
 		number[2] = pow(number[0], 2) - pow(number[1], 2) + complex[0];
 		number[1] = 2 * number[0] * number[1] + complex[1];

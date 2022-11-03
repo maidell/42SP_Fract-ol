@@ -1,14 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_error.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 23:19:01 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/02 23:31:30 by mmaidel-         ###   ########.fr       */
+/*   Created: 2022/06/02 05:16:15 by mmaidel-          #+#    #+#             */
+/*   Updated: 2022/06/25 22:21:25 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "fractol.h"
-
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+}

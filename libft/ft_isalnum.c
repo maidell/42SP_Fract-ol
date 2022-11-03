@@ -1,14 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_error.c                                     :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 23:19:01 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/02 23:31:30 by mmaidel-         ###   ########.fr       */
+/*   Created: 2022/06/02 05:15:47 by mmaidel-          #+#    #+#             */
+/*   Updated: 2022/06/25 22:16:48 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "libft.h"
 
+int	ft_isalnum(int arg)
+{
+	if (ft_isalpha(arg) || ft_isdigit(arg))
+		return (1);
+	return (0);
+}
