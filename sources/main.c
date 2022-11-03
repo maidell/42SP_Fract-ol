@@ -74,7 +74,7 @@ int    main(int argc, char **argv)
    // init_mlx(&data);
     draw_fractol(&data);
     mlx_mouse_hook(data.win, handle_zoom, &data);
-    //mlx_hook(data.win, 4, 0, handle_zoom,& data);
+    mlx_key_hook(data.win, handle_key, &data);
 
     mlx_hook(data.win, 17, 0, close_win, &data);
     mlx_loop(data.mlx);

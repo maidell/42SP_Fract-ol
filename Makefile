@@ -4,7 +4,7 @@ SRC_DIR =   ./sources
 OBJ_DIR =	./objects
 LIBFT 	=	./libft/libft.a
 SRC_FILES =   	main.c draw_fractal.c fractais.c \
-				handle_error.c hook.c
+				hook.c
 
 CC = 		cc -Wall -Wextra -Werror -g3 -O3
 

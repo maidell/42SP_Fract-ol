@@ -47,6 +47,6 @@ int            julia(double *complex, int max_i);
 void        my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int close_win (t_data *data);
 int handle_zoom (int key, int x , int y, t_data *data);
-
+int handle_key(int key, t_data *data);
 
 #endif

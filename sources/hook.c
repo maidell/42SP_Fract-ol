@@ -12,13 +12,10 @@
 
 #include "fractol.h"
 
+
 int handle_zoom (int key, int x , int y, t_data *data)
 {
-    
-    // x= 1.1;
-    // y= 0.9;
-    
-	if(key == 5 && (x || y))
+    if(key == 5 && (x || y))
     {
         data->max[0] *= 1.1;
         data->min[0] *= 1.1;
@@ -45,3 +42,9 @@ int close_win (t_data *data)
     exit(0);
 }
 
+int handle_key(int key, t_data *data)
+{
+    if (key == 65307)
+        close_win(data);
+    return (0);
+}
