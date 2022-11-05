@@ -6,13 +6,13 @@ LIBFT 	=	./libft/libft.a
 SRC_FILES =   	main.c draw_fractal.c fractais.c \
 				hook.c
 
-CC = 		cc -Wall -Wextra -Werror 
+CC =		cc -Wall -Wextra -Werror -g3 -O3 
 
-CFLAGS =    -g3 -O3 -Imlx -Lmlx -lmlx -lXext -lX11 -lm
+CFLAGS =	-Imlx -Lmlx -lmlx -lXext -lX11 -lm
 
-SRC =       $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+SRC =		$(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
-OBJ =       $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
+OBJ =		$(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 
 all: $(NAME)
 
