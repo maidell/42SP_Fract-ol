@@ -24,7 +24,7 @@ $(LIBFT):
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c 
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(HEADER) -c $< -o $@ $(CFLAGS)
+	$(CC) $(HEADER) -c  $< -o $@ 
 
 clean:
 	rm -rf $(OBJ_DIR)
