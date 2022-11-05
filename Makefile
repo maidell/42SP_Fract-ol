@@ -6,9 +6,9 @@ LIBFT 	=	./libft/libft.a
 SRC_FILES =   	main.c draw_fractal.c fractais.c \
 				hook.c
 
-CC = 		cc -Wall -Wextra -Werror -g3 -O3
+CC = 		cc -Wall -Wextra -Werror 
 
-CFLAGS =    -Imlx -Lmlx -lmlx -lXext -lX11 -lm
+CFLAGS =    -g3 -O3 -Imlx -Lmlx -lmlx -lXext -lX11 -lm
 
 SRC =       $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
@@ -24,7 +24,7 @@ $(LIBFT):
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c 
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
+	$(CC) $(HEADER) -c $< -o $@ $(CFLAGS)
 
 clean:
 	rm -rf $(OBJ_DIR)
