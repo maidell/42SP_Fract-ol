@@ -17,7 +17,7 @@ OBJ =       $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) $(LIBFT) $(CFLAGS) -o $(NAME)
+	$(CC) $(OBJ) $(LIBFT) -o $(NAME) $(CFLAGS)
 
 $(LIBFT):
 	make -C ./libft
