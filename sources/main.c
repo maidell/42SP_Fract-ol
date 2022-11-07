@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 04:35:41 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/03 04:44:38 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:13:44 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	error_argument(int err)
 
 void	handle_args(int argc, char **argv, t_data *data)
 {
-	if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10))
+	if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 11))
 		data->fractal = mandelbrot;
 	else if (argc >= 2 && !ft_strncmp(argv[1], "julia", 10))
 	{

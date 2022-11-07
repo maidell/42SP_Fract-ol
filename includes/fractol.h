@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 23:40:48 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/03 04:23:45 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:14:12 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FRACTOL_H
 # include <math.h>
 # include <mlx.h>
-# include <stdio.h>
 # include <stdlib.h>
 # define WIDTH 800
 # define HEIGHT 800
