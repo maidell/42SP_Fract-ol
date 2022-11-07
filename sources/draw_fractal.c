@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 23:22:08 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/03 04:35:17 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:10:45 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,11 @@ void	draw_fractol(t_data *data)
 		}
 		axle[0]++;
 	}
+}
+
+int	draw_fractol_put_image(t_data *data)
+{
+	draw_fractol(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+	return (0);
 }

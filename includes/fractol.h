@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 23:40:48 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/07 17:14:12 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:13:13 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_data
 
 }			t_data;
 
+int			draw_fractol_put_image(t_data *data);
 void		draw_fractol(t_data *data);
 int			mandelbrot(double *complex, int max_i);
 int			julia(double *complex, int max_i);

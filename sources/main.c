@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 04:35:41 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/07 17:13:44 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:14:10 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	main(int argc, char **argv)
 	handle_args(argc, argv, &data);
 	init_data(&data);
 	draw_fractol(&data);
+	mlx_expose_hook(data.win, draw_fractol_put_image, &data);
 	mlx_mouse_hook(data.win, handle_zoom, &data);
 	mlx_key_hook(data.win, handle_key, &data);
 	mlx_hook(data.win, 17, 0, close_win, &data);

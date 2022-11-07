@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 01:11:05 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/04 01:11:25 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:15:07 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	handle_zoom(int key, int x, int y, t_data *data)
 		data->max[1] *= 0.9;
 		data->min[1] *= 0.9;
 	}
-	draw_fractol(data);
+	draw_fractol_put_image(data);
 	return (0);
 }
 
