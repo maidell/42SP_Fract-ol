@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 08:09:46 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/11/03 04:40:51 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2022/11/08 05:52:45 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ double	ft_atof(const char *str)
 	decimal = 0.1;
 	if (*str == '-' || *str == '+')
 	{
+		if (str +1 == NULL)
+			exit(0);
 		if (*str == '-')
 			sign *= -1;
 		str++;
